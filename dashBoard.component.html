@@ -1,0 +1,35 @@
+<hr>
+<hr>
+
+<h1 class="container">
+    This Is Dash Board Page !!!!!
+</h1>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Product search field</h1>
+            <div id="product-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" ng-model="name1" class="form-control input-lg" placeholder="search" #name1/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" (click)="SelectProduct(name1.value)">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>                        
+                        <br>
+                    </span>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="shouldShowselecteurl; else showallUrls">
+        <div>
+            <img src="{{this.urltext}}"> 
+        </div>
+      </div>
+      <ng-template #showallUrls>
+        <div *ngFor="let item of products">
+            <img src="{{item.url}}" alt="Mountain">
+        </div>
+      </ng-template>
+</div>
